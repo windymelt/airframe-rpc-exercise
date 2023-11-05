@@ -1,11 +1,8 @@
 package io.github.windymelt.airframeexercise.client
 
 import scalajs.js.annotation.*
-import wvlet.airframe.http.Http
 import io.github.windymelt.airframeexercise.api.v1._
-import scala.concurrent.Future
-import scala.concurrent.ExecutionContext.Implicits.global
-import wvlet.airframe.rx.Rx
+import wvlet.airframe.http.Http
 
 object ClientMain {
   val client =
