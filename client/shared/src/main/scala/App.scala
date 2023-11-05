@@ -15,10 +15,6 @@ object ClientMain {
     println(client)
     val result = client.MyService
       .getUserById(42L)
-      // .recoverWith { case e: Throwable =>
-      //   println(e.getMessage())
-      //   Rx.future(Future(None))
-      // }
       .run(result => println(s"got $result"))
     println(result)
   }
