@@ -43,6 +43,7 @@ lazy val client =
     // CAVEAT: By default, crossProject selects CrossType.Full; you should create client/{js,jvm,shared} directory
     .in(file("client"))
     .enablePlugins(AirframeHttpPlugin)
+    .enablePlugins(ScalaJSPlugin)
     .jsSettings(
       scalaJSUseMainModuleInitializer := true,
       scalaJSLinkerConfig ~= {
@@ -57,7 +58,8 @@ lazy val client =
     .settings(
       buildSettings,
       airframeHttpClients := Seq(
-        "io.github.windymelt.airframeexercise.client.api.v1:rpc"
+        // should define package that API is defined at
+        "io.github.windymelt.airframeexercise.api.v1:rpc:ServiceRPC"
       )
     )
     .dependsOn(api)
