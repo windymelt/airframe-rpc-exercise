@@ -38,7 +38,7 @@ lazy val server =
 
 // RPC client project (JVM and Scala.js)
 lazy val client =
-  crossProject(JSPlatform, JVMPlatform)
+  crossProject(JSPlatform)
     // CAVEAT: By default, crossProject selects CrossType.Full; you should create client/{js,jvm,shared} directory
     .in(file("client"))
     .enablePlugins(AirframeHttpPlugin)
@@ -59,6 +59,9 @@ lazy val client =
       airframeHttpClients := Seq(
         // should define package that API is defined at
         "io.github.windymelt.airframeexercise.api.v1:rpc:ServiceRPC"
-      )
+      ),
+      libraryDependencies ++= Seq(
+        "com.raquo" %%% "laminar" % "16.0.0",
+      ),
     )
     .dependsOn(api)
