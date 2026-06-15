@@ -7,7 +7,7 @@ val AIRFRAME_VERSION = "23.11.1"
 // Common build settings
 val buildSettings = Seq(
   organization := "io.github.windymelt",
-  scalaVersion := "3.3.1"
+  scalaVersion := "3.3.8"
   // Add your own settings here
 )
 
@@ -65,3 +65,5 @@ lazy val client =
       ),
     )
     .dependsOn(api)
+
+scalacOptions ++= Seq("-Yfuture-lazy-vals")
