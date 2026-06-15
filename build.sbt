@@ -4,10 +4,12 @@ import org.scalajs.linker.interface.ModuleSplitStyle
 val scala3Version = "3.3.1"
 val AIRFRAME_VERSION = "23.11.1"
 
+ThisBuild / scalacOptions ++= Seq("-Yfuture-lazy-vals", "-java-output-version:11")
+
 // Common build settings
 val buildSettings = Seq(
   organization := "io.github.windymelt",
-  scalaVersion := "3.3.1"
+  scalaVersion := "3.3.8"
   // Add your own settings here
 )
 
